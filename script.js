@@ -1,6 +1,6 @@
 const sheetID = "128bSvr13vEVS2jKM_f7rFJd7WYit59FwSjKGAe3zCeE";
 const sheetName = "berita"; // pastikan ini nama tab-nya
-const url = `https://opensheet.elk.sh/${sheetID}/${sheetName}`;
+const url = `https://opensheet.elk.sh/${128bSvr13vEVS2jKM_f7rFJd7WYit59FwSjKGAe3zCeE}/${berita}`;
 
 fetch(url)
   .then(res => res.json())
