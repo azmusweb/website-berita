@@ -1,26 +1,36 @@
-const SHEET_URL = 'https://opensheet.elk.sh/128bSvr13vEVS2jKM_f7rFJd7WYit59FwSjKGAe3zCeE/Berita';
+const sheetID = "128bSvr13vEVS2jKM_f7rFJd7WYit59FwSjKGAe3zCeE";
+const sheetName = "Sheet1";
+const url = `https://opensheet.elk.sh/${sheetID}/${sheetName}`;
 
-fetch(SHEET_URL)
+fetch(url)
   .then(res => res.json())
   .then(data => {
-    if (data.length > 0) {
-      const headline = data[0];
-      document.getElementById('headline').innerHTML = `
-        <img src="${headline.gambar}" alt="${headline.judul}" />
-        <h2>${headline.judul}</h2>
-        <p>${headline.isi.substring(0, 150)}...</p>
-      `;
+    const params = new URLSearchParams(window.location.search);
+    const beritaList = document.getElementById("berita-list");
+    const beritaDetail = document.getElementById("berita-detail");
+    const breakingText = document.getElementById("breaking-text");
+    const sliderWrapper = document.getElementById("slider-wrapper");
+    const searchInput = document.getElementById("search-input");
+    const kategoriLinks = document.querySelectorAll(".kategori-link");
+
+    if (breakingText && data.length > 0) {
+      breakingText.textContent = `Breaking News: ${data[data.length - 1].judul}`;
     }
 
-    const beritaList = data.slice(1).map(item => `
-      <div class="card">
-        <a href="berita.html?slug=${item.slug}">
-          <img src="${item.gambar}" alt="${item.judul}" />
-          <h3>${item.judul}</h3>
-        </a>
-        <p>${item.tanggal} - ${item.penulis}</p>
-      </div>
-    `).join('');
+    if (sliderWrapper) {
+      const topSlider = data.slice(-3).reverse();
+      topSlider.forEach(item => {
+        const img = document.createElement("img");
+        img.src = item.gambar || 'https://via.placeholder.com/600x300?text=No+Image';
+        img.alt = item.judul;
+        sliderWrapper.appendChild(img);
+      });
+    }
 
-    document.getElementById('berita-list').innerHTML = beritaList;
-  });
+    const renderBerita = (filteredData) => {
+      beritaList.innerHTML = '';
+      filteredData.reverse().forEach((item, index) => {
+        const card = document.createElement("div");
+        card.className = "berita-card";
+        card.innerHTML = `
+          <img src="${item.gambar || 'https://via.placeholder.com/600x300?text=No+Image'}
