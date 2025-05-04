@@ -1,31 +1,65 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Berita Terkini - Open Site</title>
+  <title>Berita Terkini - tradisional.web.id</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <div class="container header-wrapper">
-      <h1 class="logo">Open Site</h1>
-      <nav>
-        <a href="#">Beranda</a>
-        <a href="#">Kategori</a>
-        <a href="#">Tentang</a>
-      </nav>
+    <div class="topbar">
+      <div class="container">
+        <h1 class="logo">tradisional.web.id</h1>
+        <nav class="nav-main">
+          <a href="#">Beranda</a>
+          <a href="#">Nasional</a>
+          <a href="#">Ekonomi</a>
+          <a href="#">Teknologi</a>
+          <a href="#">Gaya Hidup</a>
+        </nav>
+      </div>
     </div>
   </header>
 
+  <section class="breaking-news">
+    <div class="container">
+      <p id="breaking-text">Breaking News: Loading...</p>
+    </div>
+  </section>
+
+  <section class="slider">
+    <div class="container">
+      <div id="slider-wrapper"></div>
+    </div>
+  </section>
+
+  <section class="search">
+    <div class="container">
+      <input type="text" id="search-input" placeholder="Cari Berita..." />
+    </div>
+  </section>
+
   <main class="container">
-    <section id="headline"></section>
-    <section id="berita-list" class="grid"></section>
+    <h2 class="judul-section">Berita Terkini</h2>
+    <div class="content-area">
+      <div id="berita-list" class="berita-grid"></div>
+      <aside class="sidebar">
+        <h3>Kategori</h3>
+        <ul>
+          <li><a href="#" class="kategori-link" data-kategori="Nasional">Nasional</a></li>
+          <li><a href="#" class="kategori-link" data-kategori="Ekonomi">Ekonomi</a></li>
+          <li><a href="#" class="kategori-link" data-kategori="Teknologi">Teknologi</a></li>
+          <li><a href="#" class="kategori-link" data-kategori="Gaya Hidup">Gaya Hidup</a></li>
+        </ul>
+      </aside>
+    </div>
   </main>
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Open Site. All rights reserved.</p>
+      <p>&copy; 2025 tradisional.web.id | Dibuat dengan ❤️ oleh Open Site</p>
     </div>
   </footer>
 
