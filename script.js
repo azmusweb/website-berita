@@ -1,7 +1,7 @@
 // script.js
 const sheetID = "128bSvr13vEVS2jKM_f7rFJd7WYit59FwSjKGAe3zCeE";
-const sheetName = "liveweb";
-const url = `https://opensheet.elk.sh/${128bSvr13vEVS2jKM_f7rFJd7WYit59FwSjKGAe3zCeE}/${liveweb}`;
+const sheetName = "berita";
+const url = `https://opensheet.elk.sh/${128bSvr13vEVS2jKM_f7rFJd7WYit59FwSjKGAe3zCeE}/${berita}`;
 
 fetch(url)
   .then(res => res.json())
