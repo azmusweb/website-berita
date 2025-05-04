@@ -1,4 +1,4 @@
-/* style.css */
+/* General styles */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -12,10 +12,11 @@ body {
   margin: auto;
 }
 
+/* Header styles */
 .topbar {
   background: #c00;
   color: white;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 .logo {
@@ -25,68 +26,67 @@ body {
 }
 
 .nav-main {
-  margin-top: 10px;
-}
-
-.nav-main ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
-  gap: 20px;
-}
-
-.nav-main li {
-  position: relative;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 .nav-main a {
   color: white;
   text-decoration: none;
+  margin-right: 15px;
   font-weight: bold;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #c00;
+  color: white;
   padding: 10px 15px;
-  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
 }
 
-.nav-main .dropdown:hover > .dropdown-menu {
-  display: block;
-}
-
-.nav-main .dropdown-menu {
+.dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #ffcc00;
-  padding: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 9999;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
-.nav-main .dropdown-menu li {
-  padding: 10px 0;
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
-.nav-main .dropdown-menu a {
-  color: #222;
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
-.nav-main .dropdown-menu a:hover {
-  color: #c00;
-  font-weight: bold;
+.dropdown-content a:hover {
+  background-color: #ddd;
 }
 
-/* Breaking News */
+/* Breaking news */
 .breaking-news {
   background: #ffcc00;
   padding: 10px 0;
   font-weight: bold;
-  text-align: center;
 }
 
-/* Slider */
+/* Slider styles */
 .slider {
-  margin: 30px 0;
+  margin: 20px 0;
 }
 
 #slider-wrapper {
@@ -97,13 +97,13 @@ body {
 
 #slider-wrapper img {
   width: 100%;
-  max-width: 600px;
-  height: 300px;
+  max-width: 400px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
-/* Main content */
+/* Content area */
 main h2.judul-section {
   margin: 30px 0 20px;
   color: #c00;
@@ -146,82 +146,11 @@ main h2.judul-section {
   font-weight: bold;
 }
 
-/* Berita Card */
-.berita-card {
-  background: white;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.berita-card:hover {
-  transform: translateY(-5px);
-}
-
-.berita-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.berita-card .content {
-  padding: 15px;
-}
-
-.berita-card h3 {
-  font-size: 18px;
-  margin: 0;
-  color: #c00;
-}
-
+/* Footer */
 footer {
   background: #222;
   color: white;
   text-align: center;
   padding: 20px 0;
   margin-top: 50px;
-}
-
-.berita-detail img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  margin: 20px 0;
-  border-radius: 5px;
-}
-
-.berita-detail h2 {
-  color: #c00;
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-
-.berita-detail p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #444;
-}
-
-/* Responsivitas */
-@media (max-width: 768px) {
-  .nav-main ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .nav-main .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    background-color: #fff;
-  }
-
-  .content-area {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    margin-top: 30px;
-  }
 }
