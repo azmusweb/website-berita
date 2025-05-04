@@ -1,72 +1,21 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Berita Terkini - tradisional.web.id</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <div class="topbar">
-      <div class="container">
-        <h1 class="logo">tradisional.web.id</h1>
-        <nav class="nav-main">
-          <a href="#">Beranda</a>
-          <a href="#">Nasional</a>
-          <a href="#">Ekonomi</a>
-          <a href="#">Teknologi</a>
-          <a href="#">Gaya Hidup</a>
-          <div class="dropdown">
-            <a href="#" class="dropbtn">Kategori</a>
-            <div class="dropdown-content">
-              <a href="#">Nasional</a>
-              <a href="#">Internasional</a>
-              <a href="#">Olahraga</a>
-              <a href="#">Teknologi</a>
-              <a href="#">Bisnis</a>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </div>
-  </header>
+<!-- Tambahkan ini di <head> -->
+<script src="script.js" defer></script>
 
-  <section class="breaking-news">
-    <div class="container">
-      <p id="breaking-text">Breaking News: Loading...</p>
-    </div>
-  </section>
+<!-- Tambahkan kontainer breaking news -->
+<section class="breaking-news">
+  <div class="container">
+    <p id="breaking-text">Breaking News: Loading...</p>
+  </div>
+</section>
 
-  <section class="slider">
-    <div class="container">
-      <div id="slider-wrapper"></div>
-    </div>
-  </section>
+<!-- Tambahkan kontainer slider -->
+<section class="slider">
+  <div class="container">
+    <div id="slider-wrapper"></div>
+  </div>
+</section>
 
-  <main class="container">
-    <h2 class="judul-section">Berita Terkini</h2>
-    <div class="content-area">
-      <div id="berita-list" class="berita-grid"></div>
-      <aside class="sidebar">
-        <h3>Kategori</h3>
-        <ul>
-          <li><a href="#">Nasional</a></li>
-          <li><a href="#">Ekonomi</a></li>
-          <li><a href="#">Teknologi</a></li>
-          <li><a href="#">Gaya Hidup</a></li>
-        </ul>
-      </aside>
-    </div>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 tradisional.web.id | Dibuat dengan ❤️ oleh Open Site</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<!-- Kontainer daftar berita -->
+<main class="container">
+  <div id="berita-list" class="berita-grid"></div>
+</main>
