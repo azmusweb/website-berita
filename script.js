@@ -1,5 +1,5 @@
 const sheetID = "128bSvr13vEVS2jKM_f7rFJd7WYit59FwSjKGAe3zCeE";
-const sheetName = "web berita";
+const sheetName = "Sheet1";
 const url = `https://opensheet.elk.sh/${sheetID}/${sheetName}`;
 
 async function loadBerita() {
@@ -7,7 +7,7 @@ async function loadBerita() {
   const data = await response.json();
 
   const container = document.getElementById("berita-container");
-  container.innerHTML = ""; // bersihkan dulu
+  container.innerHTML = "";
 
   data.reverse().forEach(berita => {
     const card = document.createElement("div");
