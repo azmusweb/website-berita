@@ -1,17 +1,9 @@
-/* Warna dasar */
-:root {
-  --primary-color: #c00;  /* Warna merah utama */
-  --secondary-color: #222;  /* Warna latar belakang footer */
-  --background-color: #f4f4f4; /* Latar belakang */
-  --text-color: #333; /* Warna teks utama */
-  --accent-color: #ffcc00; /* Warna highlight untuk breaking news */
-}
-
+/* style.css */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background: var(--background-color);
-  color: var(--text-color);
+  background: #f4f4f4;
+  color: #333;
 }
 
 .container {
@@ -20,9 +12,8 @@ body {
   margin: auto;
 }
 
-/* Topbar */
 .topbar {
-  background: var(--primary-color);
+  background: #c00;
   color: white;
   padding: 10px 0;
 }
@@ -37,140 +28,69 @@ body {
   margin-top: 10px;
 }
 
+.nav-main ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-main li {
+  position: relative;
+}
+
 .nav-main a {
   color: white;
   text-decoration: none;
-  margin-right: 15px;
   font-weight: bold;
-  text-transform: uppercase;
+  padding: 5px 10px;
+  display: block;
 }
 
-/* Breaking news */
-.breaking-news {
-  background: var(--accent-color);
-  padding: 10px 0;
-  font-weight: bold;
-  color: #222;
-  text-align: center;
+.nav-main .dropdown:hover > .dropdown-menu {
+  display: block;
 }
 
-.slider {
-  margin: 20px 0;
-}
-
-#slider-wrapper {
-  display: flex;
-  overflow-x: auto;
-  gap: 10px;
-}
-
-#slider-wrapper img {
-  width: 100%;
-  max-width: 400px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 5px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-/* Search bar */
-.search {
-  padding: 10px 0;
-  background: #f9f9f9;
-}
-
-#search-input {
+.nav-main .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffcc00;
   padding: 10px;
-  width: 100%;
-  font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Berita Section */
-main h2.judul-section {
-  margin: 30px 0 20px;
-  color: var(--primary-color);
-  border-bottom: 3px solid var(--primary-color);
-  padding-bottom: 10px;
+.nav-main .dropdown-menu li {
+  padding: 5px 0;
 }
 
-/* Layout konten utama */
-.content-area {
-  display: flex;
-  gap: 20px;
+.nav-main .dropdown-menu a {
+  color: #222;
 }
 
-/* Grid berita */
-.berita-grid {
-  flex: 3;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-/* Sidebar */
-.sidebar {
-  flex: 1;
-  background: white;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar li {
-  margin-bottom: 10px;
-}
-
-.sidebar a {
-  text-decoration: none;
-  color: var(--primary-color);
+.nav-main .dropdown-menu a:hover {
+  color: #c00;
   font-weight: bold;
-  transition: color 0.3s;
 }
 
-.sidebar a:hover {
-  color: #ffcc00;
-}
+/* Peningkatan untuk responsivitas */
+@media (max-width: 768px) {
+  .nav-main ul {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-/* Berita Card */
-.berita-card {
-  background: white;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.berita-card:hover {
-  transform: translateY(-5px);
-}
-
-.berita-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.berita-card .content {
-  padding: 15px;
-}
-
-.berita-card h3 {
-  font-size: 18px;
-  margin: 0;
-  color: var(--primary-color);
-  font-weight: bold;
+  .nav-main .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background-color: #fff;
+  }
 }
 
 footer {
-  background: var(--secondary-color);
+  background: #222;
   color: white;
   text-align: center;
   padding: 20px 0;
@@ -179,25 +99,4 @@ footer {
 
 footer p {
   font-size: 14px;
-}
-
-/* Detail berita */
-.berita-detail img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  margin: 20px 0;
-  border-radius: 5px;
-}
-
-.berita-detail h2 {
-  color: var(--primary-color);
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-
-.berita-detail p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #444;
 }
