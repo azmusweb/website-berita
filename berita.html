@@ -1,49 +1,29 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detail Berita</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detail Berita - tradisional.web.id</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <div class="logo">OpenSite</div>
-    <nav>
-      <a href="index.html">Beranda</a>
-    </nav>
+    <div class="container">
+      <h1>tradisional.web.id</h1>
+      <nav>
+        <a href="index.html">Beranda</a>
+      </nav>
+    </div>
   </header>
 
-  <main id="berita-detail" style="padding: 20px;"></main>
+  <main class="container">
+    <div id="berita-detail"></div>
+  </main>
 
   <footer>
-    <p>© 2025 OpenSite - Semua hak dilindungi</p>
+    <p>&copy; 2025 tradisional.web.id</p>
   </footer>
 
-  <script>
-    const sheetID = "128bSvr13vEVS2jKM_f7rFJd7WYit59FwSjKGAe3zCeE";
-    const sheetName = "Sheet1";
-    const url = `https://opensheet.elk.sh/${sheetID}/${sheetName}`;
-
-    const params = new URLSearchParams(window.location.search);
-    const slug = params.get("slug");
-
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        const berita = data.find(item => item.slug === slug);
-        const container = document.getElementById("berita-detail");
-        if (berita) {
-          container.innerHTML = `
-            <h1>${berita.judul}</h1>
-            <p><strong>${berita.penulis}</strong> - ${berita.tanggal}</p>
-            <img src="${berita.gambar}" style="width:100%;max-height:400px;object-fit:cover;margin-top:10px;" />
-            <p style="margin-top:20px;">${berita.isi}</p>
-          `;
-        } else {
-          container.innerHTML = "<p>Berita tidak ditemukan.</p>";
-        }
-      });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
